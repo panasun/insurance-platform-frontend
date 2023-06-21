@@ -18,7 +18,7 @@ const LinkStyled = styled(Link)(({ theme }) => ({
 
 const AppBarContent = props => {
   // ** Props
-  const { appBarContent: userAppBarContent, appBarBranding: userAppBarBranding } = props
+  const { appBarContent: userAppBarContent, appBarBranding: userAppBarBranding, children } = props
 
   // ** Hooks
   const theme = useTheme()
@@ -102,7 +102,7 @@ const AppBarContent = props => {
           <Typography variant='h6' sx={{ ml: 2, fontWeight: 700, lineHeight: 1.2 }}>
             {themeConfig.templateName}
           </Typography>
-          {props.children}
+          {children}
         </LinkStyled>
       )}
       {userAppBarContent ? userAppBarContent(props) : null}

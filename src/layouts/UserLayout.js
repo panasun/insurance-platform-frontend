@@ -39,6 +39,7 @@ const UserLayout = ({ children, contentHeightFixed }) => {
     settings.layout = 'vertical'
   }
 
+  console.log(settings)
   return (
     <Layout
       hidden={hidden}
