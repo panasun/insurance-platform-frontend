@@ -71,7 +71,7 @@ const Trade = () => {
           <CardHeader title='Order Book'></CardHeader>
           <CardContent>
             <Grid container spacing={6}>
-              <Grid item xs={12} lg={7}>
+              <Grid item xs={12}>
                 <TableContainer component={Paper}>
                   <Table sx={{ minWidth: 650 }} size='small'>
                     <TableHead>
@@ -111,7 +111,7 @@ const Trade = () => {
                   </Table>
                 </TableContainer>
               </Grid>
-              <Grid item xs={12} lg={5}>
+              <Grid item xs={12}>
                 <TableContainer component={Paper}>
                   <Table sx={{ minWidth: 650 }} size='small'>
                     <TableHead>
@@ -121,8 +121,8 @@ const Trade = () => {
                         </TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell align='right'>Volume</TableCell>
-                        <TableCell align='left'>Price</TableCell>
+                        <TableCell align='center'>Volume</TableCell>
+                        <TableCell align='center'>Price</TableCell>
                         <TableCell align='center'>Order</TableCell>
                         <TableCell align='center'>Type</TableCell>
                         <TableCell align='center'>Time</TableCell>
@@ -132,8 +132,8 @@ const Trade = () => {
                       {rowsLatestTrade.map(row => (
                         <TableRow key={row.name} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                           {' '}
-                          <TableCell align='right'>{row.volume}</TableCell>
-                          <TableCell align='left'>{row.price.toFixed(2)}</TableCell>{' '}
+                          <TableCell align='center'>{row.volume}</TableCell>
+                          <TableCell align='center'>{row.price.toFixed(2)}</TableCell>{' '}
                           <TableCell align='center'>{row.type2}</TableCell>
                           <TableCell align='center'>{row.type1}</TableCell>
                           <TableCell align='center'>{row.timestamp.toLocaleString()}</TableCell>
