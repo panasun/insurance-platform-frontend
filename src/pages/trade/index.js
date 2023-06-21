@@ -13,7 +13,7 @@ import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 
 // ** Lib
-import { format, formatDistance, formatRelative, subDays } from 'date-fns'
+import { format } from 'date-fns'
 
 const Trade = () => {
   const createOrderBook = (
@@ -57,11 +57,11 @@ const Trade = () => {
   ]
 
   const rowsLatestTrade = [
-    createLatestTrade('premium', 'buy', 120, 3.48, new Date()),
-    createLatestTrade('premium', 'sell', 150, 3.4, new Date()),
-    createLatestTrade('coverage', 'sell', 200, 948.92, new Date()),
-    createLatestTrade('coverage', 'buy', 200, 948.92, new Date()),
-    createLatestTrade('premium', 'buy', 180, 3.58, new Date())
+    createLatestTrade('P', 'buy', 120, 3.48, new Date()),
+    createLatestTrade('P', 'sell', 150, 3.4, new Date()),
+    createLatestTrade('C', 'sell', 200, 948.92, new Date()),
+    createLatestTrade('C', 'buy', 200, 948.92, new Date()),
+    createLatestTrade('P', 'buy', 180, 3.58, new Date())
   ]
 
   return (
@@ -71,7 +71,7 @@ const Trade = () => {
           <CardHeader title='Order Book'></CardHeader>
           <CardContent>
             <Grid container spacing={6}>
-              <Grid item xs={12}>
+              <Grid item xs={12} lg={8}>
                 <TableContainer component={Paper}>
                   <Table sx={{ minWidth: 650 }} size='small'>
                     <TableHead>
@@ -111,9 +111,9 @@ const Trade = () => {
                   </Table>
                 </TableContainer>
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={12} lg={4}>
                 <TableContainer component={Paper}>
-                  <Table sx={{ minWidth: 650 }} size='small'>
+                  <Table size='small'>
                     <TableHead>
                       <TableRow>
                         <TableCell align='center' colSpan={5}>
@@ -123,7 +123,6 @@ const Trade = () => {
                       <TableRow>
                         <TableCell align='center'>Volume</TableCell>
                         <TableCell align='center'>Price</TableCell>
-                        <TableCell align='center'>Order</TableCell>
                         <TableCell align='center'>Type</TableCell>
                         <TableCell align='center'>Time</TableCell>
                       </TableRow>
@@ -131,12 +130,10 @@ const Trade = () => {
                     <TableBody>
                       {rowsLatestTrade.map(row => (
                         <TableRow key={row.name} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                          {' '}
                           <TableCell align='center'>{row.volume}</TableCell>
-                          <TableCell align='center'>{row.price.toFixed(2)}</TableCell>{' '}
-                          <TableCell align='center'>{row.type2}</TableCell>
+                          <TableCell align='center'>{row.price.toFixed(2)}</TableCell>
                           <TableCell align='center'>{row.type1}</TableCell>
-                          <TableCell align='center'>{row.timestamp.toLocaleString()}</TableCell>
+                          <TableCell align='center'>{format(row.timestamp, "yyyy.MM.dd HH:MM")}</TableCell>
                         </TableRow>
                       ))}
                     </TableBody>
