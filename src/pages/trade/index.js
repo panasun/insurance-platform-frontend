@@ -77,10 +77,10 @@ const Trade = () => {
                     <TableHead>
                       <TableRow>
                         <TableCell align='center' colSpan={4}>
-                          Premium
+                          <Typography sx={{ fontWeight: 'bold' }} gutterBottom>Premium</Typography>
                         </TableCell>
                         <TableCell align='center' colSpan={4}>
-                          Coverage
+                          <Typography sx={{ fontWeight: 'bold' }} gutterBottom>Coverage</Typography>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -117,7 +117,7 @@ const Trade = () => {
                     <TableHead>
                       <TableRow>
                         <TableCell align='center' colSpan={5}>
-                          Latest
+                          <Typography sx={{ fontWeight: 'bold' }} gutterBottom>Latest</Typography>
                         </TableCell>
                       </TableRow>
                       <TableRow>
