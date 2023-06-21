@@ -32,4 +32,3 @@ const AppBarContent = props => {
 }
 
 export default AppBarContent
-

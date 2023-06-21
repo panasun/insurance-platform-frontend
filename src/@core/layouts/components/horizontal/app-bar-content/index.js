@@ -102,6 +102,7 @@ const AppBarContent = props => {
           <Typography variant='h6' sx={{ ml: 2, fontWeight: 700, lineHeight: 1.2 }}>
             {themeConfig.templateName}
           </Typography>
+          {props.children}
         </LinkStyled>
       )}
       {userAppBarContent ? userAppBarContent(props) : null}
