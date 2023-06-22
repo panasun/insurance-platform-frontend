@@ -11,7 +11,7 @@ import axios from 'axios'
 import authConfig from 'src/configs/auth'
 
 // ** Lib
-import * as Metamask from 'src/@core/utils/metamask'
+import * as Metamask from 'src/@core/blockchain/metamask'
 
 // ** Defaults
 const defaultProvider = {
